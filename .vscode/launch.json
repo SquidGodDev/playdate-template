@@ -1,0 +1,12 @@
+// Specifies what the debugger launch task should be
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "playdate",
+            "request": "launch",
+            "name": "Playdate: Debug",
+            "preLaunchTask": "${defaultBuildTask}"
+        }
+    ]
+}

@@ -1,0 +1,45 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            // Use "pdc" command to build Playdate project into .pdx
+            "label": "Playdate: Build",
+            "type": "pdc",
+            // Look for build problems that match a specific format and output it to the "problems" window
+            "problemMatcher": ["$pdc-lua", "$pdc-external"],
+            "presentation": {
+                // Don't show the terminal window unless there is an error
+                "reveal": "silent",
+                // Switch to problems tab on error
+                "revealProblems": "onProblem"
+            }
+        },
+        {
+            // Opens the Playdate Simulator with our project .pdx
+            "label": "Playdate: Run",
+            "type": "playdate-simulator",
+            // Look for build problems that match a specific format and output it to the "problems" window
+            "problemMatcher": ["$pdc-external"],
+            // Close any existing simulator windows before launching a new one
+            "kill": true,
+            // Don't show the terminal window unless there is an error
+            "presentation": {
+                // Don't show the terminal window unless there is an error
+                "reveal": "silent",
+                // Switch to problems tab on error
+                "revealProblems": "onProblem"
+            }
+        },
+        {
+            // Build and then launch the Playdate Simulator with our newly build .pdx
+            "label": "Playdate: Build and Run",
+            "dependsOn": ["Playdate: Build", "Playdate: Run"],
+            "dependsOrder": "sequence",
+            // Set as our default built task under Terminal->Run Build Task, or with ctrl/cmd+shift+B
+            "group": {
+                "kind": "build",
+                "isDefault": true,
+            }
+        }
+    ]
+}

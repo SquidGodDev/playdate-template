@@ -1,0 +1,34 @@
+{
+    // ====== Lua Settings ======
+    // The Playdate Lua runtime uses "import" instead of "require"
+    "Lua.diagnostics.globals": ["import"],
+    // Sumneko Lua type definition doesn't support callbacks/overrides yet,
+    // so do this to make playdate.update() override not complain as much
+    "Lua.diagnostics.severity": {
+        "duplicate-set-field": "Hint"
+    },
+    // Set default indent style (this is personal preference)
+    "Lua.format.defaultConfig": {
+        "indent_style": "space",
+        "indent_size": "4"
+    },
+    // The Playdate Lua runtime does not use the io, os, or package libraries
+    "Lua.runtime.builtin": {
+        "io": "disable",
+        "os": "disable",
+        "package": "disable"
+    },
+    // The Playdate Lua runtime adds additional assignment operators not present in the default Lua runtime:
+    // https://sdk.play.date/Inside%20Playdate.html#additional-assignment-operators
+    "Lua.runtime.nonstandardSymbol": ["+=", "-=", "*=", "/=", "//=", "%=", "<<=", ">>=", "&=", "|=", "^="],
+    // The Playdate Lua runtime uses the latest version of Lua (5.4)
+    "Lua.runtime.version": "Lua 5.4",
+    // Path to Playdate type definitions to get auto-complete and annotations
+    "Lua.workspace.library": [
+        "./.vscode/playdate-luacats"
+    ],
+
+    // ====== Playdate Debug Settings ======
+    // Output directory for the compiled game bundle
+    "playdate-debug.outputPath": "builds"
+}
