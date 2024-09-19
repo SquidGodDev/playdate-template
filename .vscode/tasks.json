@@ -8,10 +8,12 @@
             // Look for build problems that match a specific format and output it to the "problems" window
             "problemMatcher": ["$pdc-lua", "$pdc-external"],
             "presentation": {
-                // Don't show the terminal window unless there is an error
-                "reveal": "silent",
                 // Switch to problems tab on error
-                "revealProblems": "onProblem"
+                "revealProblems": "onProblem",
+                // Share same terminal window as other tasks
+                "panel": "shared",
+                // Don't show "Terminal will be reused by tasks, press any key to close it" message.
+                "showReuseMessage": false
             }
         },
         {
@@ -24,10 +26,12 @@
             "kill": true,
             // Don't show the terminal window unless there is an error
             "presentation": {
-                // Don't show the terminal window unless there is an error
-                "reveal": "silent",
                 // Switch to problems tab on error
-                "revealProblems": "onProblem"
+                "revealProblems": "onProblem",
+                // Share same terminal window as other tasks
+                "panel": "shared",
+                // Don't show "Terminal will be reused by tasks, press any key to close it" message.
+                "showReuseMessage": false
             }
         },
         {
