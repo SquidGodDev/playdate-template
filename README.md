@@ -22,10 +22,10 @@ This template includes a copy of [playdate-luacats](https://github.com/notpeter/
      - Open the "Windows Powershell" application, copy and paste the following into the terminal, and then press enter:
 
         ```sh
-        [Environment]::SetEnvironmentVariable("PLAYDATE_SDK_PATH", "$env:USERPROFILE\Documents\PlaydateSDK", "User")
+       [Environment]::SetEnvironmentVariable("PLAYDATE_SDK_PATH", ([Environment]::GetFolderPath("MyDocuments"))+"\PlaydateSDK", "User")
         ```
-     - If you installed the Playdate SDK at a different path, change the `$env:USERPROFILE\Documents\PlaydateSDK` part of the command to where you installed it
-     - To check if it worked correctly, close and reopen Powershell, type `$env:PLAYDATE_SDK_PATH`, and press enter. It should print the path to your `PlaydateSDK` folder
+     - If you installed the Playdate SDK at a different path, change the `([Environment]::GetFolderPath("MyDocuments"))+"\PlaydateSDK"` part of the command to where you installed it
+     - To check if it worked correctly, close and reopen Powershell, type `cd $env:PLAYDATE_SDK_PATH`, and press enter. It should print the path to your `PlaydateSDK` folder
    - **Linux**
      - In a terminal window, type the following command to open your `.bashrc` file located in your Home directory using the nano text editor (replace `.bashrc` with `.zshrc` if your distro uses zsh instead of bash) 
        ```
